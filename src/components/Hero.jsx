@@ -6,15 +6,14 @@ export function numberWithCommas(x) {
 }
 
 const Hero = ({coins}) => {
-    // console.log(coins);
     return (
         <main className='h-screen'>
             <div className="flex flex-col justify-center my-16">
                 <h1 className='text-center font-bold text-6xl md:text-8xl'> TRACK AND TRADE</h1>
-                <h1 className="text-center text-6xl md:text-8xl font-bold m-5"> CRYPTO CURRENCIES</h1>
-                <p className="text-center text-xl font-extrabold">A simple application to track the price of your favorite cryptocurrencies.</p>
+                <h1 className="text-center text-6xl md:text-8xl font-bold mt-5 md:m-5 text-blue-700"> CRYPTO CURRENCIES</h1>
+                <p className="py-8 md:py-2 text-center text-xl font-extrabold">A simple application to track the price of your favorite cryptocurrencies.</p>
             </div>
-            <div className="justify-center images flex space-x-16">
+            <div className="hidden justify-center images md:flex space-x-16 md:visible">
                 {coins.slice(0, 4).map((item) => (
                     <Link
                         to={`/coin/${item.id}`}
