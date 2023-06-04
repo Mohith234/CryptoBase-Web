@@ -23,12 +23,12 @@ const Navbar = () => {
   };
 
   return (
-    <div className='rounded-div flex items-center justify-between h-20 font-bold'>
+    <div className='m-4 rounded-div flex items-center border-none justify-between h-20 font-bold'>
       <div className='hidden md:block'>
         <ThemeToggle />
       </div>
       <Link to='/'>
-        <h1 className='font-bold text-2xl'>CryptoBase</h1>
+        <h1 className='font-bold font-sans text-2xl'>CryptoBase</h1>
       </Link>
 
       {user?.email ? (

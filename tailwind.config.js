@@ -20,7 +20,10 @@ module.exports = {
         input: 'var(--color-bg-input)',
         accent: 'var(--color-text-accent)',
       },
-    },
+    }, 
+    fontFamily: {
+      sans : ['Space Grotesk', 'sans-serif'],
+    }
   },
   plugins: [],
 };

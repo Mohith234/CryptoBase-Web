@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
-import { Sparklines, SparklinesLine } from 'react-sparklines';
 import { UserAuth } from '../context/AuthContext';
 import { db } from '../firebase';
 import { arrayUnion, doc, updateDoc } from 'firebase/firestore';
@@ -29,7 +28,7 @@ const CoinItem = ({ coin }) => {
   };
 
   return (
-    <tr className='h-[80px] border-b overflow-hidden'>
+    <tr className='h-[80px] border-b overflow-hidden rounded-xl'>
       <td onClick={saveCoin}>
         {savedCoin ? <AiFillStar /> : <AiOutlineStar />}
       </td>
@@ -59,16 +58,8 @@ const CoinItem = ({ coin }) => {
           </p>
         )}
       </td>
-      <td className='w-[180px] hidden md:table-cell'>
-        ₹ {coin.total_volume.toLocaleString()}
-      </td>
       <td className='w-[180px] hidden sm:table-cell'>
         ₹ {coin.market_cap.toLocaleString()}
-      </td>
-      <td>
-        <Sparklines data={coin.sparkline_in_7d.price}>
-          <SparklinesLine color='teal' />
-        </Sparklines>
       </td>
     </tr>
   );

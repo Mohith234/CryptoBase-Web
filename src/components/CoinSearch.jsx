@@ -5,15 +5,15 @@ const CoinSearch = ({ coins }) => {
   const [searchText, setSearchText] = useState('');
   console.log(coins)
   return (
-    <div className='rounded-div my-4'>
+    <div className='rounded-div mb-4'>
       <div className='flex flex-col md:flex-row justify-between pt-4 pb-6 text-center md:text-right'>
-        <h1 className='text-2xl font-bold my-2'>Search Crypto</h1>
+        <h1 className='text-3xl font-bold my-2 pl-4'>Market Update</h1>
         <form>
           <input
             onChange={(e) => setSearchText(e.target.value)}
             className='w-full bg-primary border border-input px-4 py-2 rounded-2xl shadow-xl'
             type='text'
-            placeholder='Search a coin'
+            placeholder='Search for a Coin..'
           />
         </form>
       </div>
@@ -22,18 +22,17 @@ const CoinSearch = ({ coins }) => {
         <thead>
           <tr className='border-b'>
             <th></th>
-            <th className='px-4'>#</th>
-            <th className='text-left'>Coin</th>
-            <th></th>
-            <th>Price</th>
-            <th>24h</th>
-            <th className='hidden md:table-cell'>24h Volume</th>
-            <th className='hidden sm:table-cell'>Mkt</th>
-            <th>Last 7 Days</th>
+            <th className=' text-xl px-3'>#</th>
+            <th className=' text-xl text-left p-2'>Coin</th>
+            <th className=' text-xl p-2'></th>
+            <th className=' text-xl p-2'>Price</th>
+            <th className=' text-xl p-2'>24h</th>
+            <th className=' text-xl hidden sm:table-cell p-2'>Market Cap</th>
           </tr>
         </thead>
         <tbody>
           {coins
+          // eslint-disable-next-line
             .filter((value) => {
               if (searchText === '') {
                 return value;
